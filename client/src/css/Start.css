@@ -1,0 +1,334 @@
+.start-container{
+   
+    gap:2.5rem;
+}
+
+.startPage-main-container{
+    position: relative;
+    z-index:3;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.start-title{
+    /* position:fixed; */
+    /* top:10rem;; */
+    margin-top:1rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.6rem;
+    line-height: 2.6rem;
+    font-family: 'Akaya Kanadaka', cursive;
+    color:red;
+}
+
+
+
+.initial-btn, .signup-btn{
+    border:1px solid rgba(114, 114, 114, 0.8);
+    width: 50%;
+    display:flex;
+    justify-content:center ;
+    align-items: center;
+    width: 15rem;
+    height: 2.7rem;
+    border-radius: .7rem;
+    color:white;
+    background: #f95d5d;
+    font-family: 'Akaya Kanadaka', cursive;
+}
+
+.signup-container{
+    display:flex;
+    flex-direction: column;
+    gap:.2rem;
+    width:15rem;
+}
+
+.signup-container span{
+    font-style: italic;
+}
+
+.signup-btn{
+    width:100%;
+}
+
+.start-login-btn{
+    margin-top:6rem;
+}
+
+.startPage-images-container{
+    width:100%;
+    height:15%;
+    /* border:1px solid red; */
+    position: relative;
+    z-index:-1;
+}
+.startPage-images{
+   
+    position:absolute;
+    z-index:-1;
+ 
+}
+
+.carrots{ 
+    width:10rem;
+    height:13rem;
+    left:8%;
+    top:25%;
+    transform: rotate(-20deg);
+}
+
+.strawberry{
+    width:8rem;
+    height:11rem;
+    right:15%;
+    top:28%;
+    /* transform: rotate(5deg); */
+}
+
+.vegPlate{
+    width:10rem;
+    height:7rem;
+    right:35%;
+    top:50%;
+    /* transform: rotate(5deg); */
+}
+
+.broccoli{
+    width:8rem;
+    height:6rem;
+    left:30%;
+    top:20%;
+    transform: rotate(10deg);
+}
+
+@media (max-width:1000px){
+    .start-container{
+        padding-top:15rem;
+        gap:2.5rem;
+    }
+    .startPage-main-container{
+        width:100%
+    }
+    .carrots{ 
+        width:15rem;
+        height:19rem;
+        top:0%;
+        left:20%;
+    }
+    
+    .strawberry{
+        width:13rem;
+        height:16rem;
+        top:0%;
+        right:19%;
+    }
+    
+    .vegPlate{
+        width:13rem;
+        height:10rem;
+        top:35%;
+
+    }
+    
+    .broccoli{
+        width: 12rem;
+        height:10rem;
+        top:40%;
+        left:30%;
+    }
+
+    
+}
+
+@media (max-width:900px){
+    .broccoli{
+        top:30%;
+        left:30%;
+    }
+    
+    .vegPlate{
+        top:25%;
+
+    }
+
+
+}
+
+@media (max-width:550px){
+    .start-container{
+        padding-top:5rem;
+        gap:2.5rem;
+    }
+    .broccoli{
+        top:0%;
+        left:30%;
+    }
+    
+    .vegPlate{
+        width:12rem;
+        height:8rem;
+        top:15%;
+
+    }
+
+    .carrots{ 
+        width:13rem;
+        height:15rem;
+        top:-30%;
+        /* z-index:0; */
+        left:10%;
+    }
+    
+    .strawberry{
+        width:11rem;
+        height:14rem;
+        top:-15%;
+        right:14%;
+    }
+    
+
+
+}
+
+@media (max-width:449px){
+    .start-container{
+        padding-top:10rem;
+        gap:2.5rem;
+    }
+
+    .startPage-images-container{
+        width:100%;
+        height:15%;
+        /* border:1px solid red; */
+        position: relative;
+        z-index:-1;
+        display: flex;
+        gap:1rem
+    }
+
+    /* .start-container{
+        padding-top:5rem;
+        gap:2.5rem;
+    } */
+    .broccoli{
+        top:-30%;
+        left:10%;
+    }
+    
+    .vegPlate{
+        width:10rem;
+        height:7rem;
+        top:45%;
+
+    }
+
+    .carrots{ 
+        width:13rem;
+        height:15rem;
+        top:-10%;
+        /* z-index:0; */
+        left:-5%;
+    }
+    
+    .strawberry{
+        width:8rem;
+        height:11rem;
+        top:0%;
+        right:10%;
+    }
+}
+
+@media (max-width:380px){
+    .carrots{ 
+        top:0%;
+    }
+    
+    .strawberry{
+        top:0%;
+    }
+    
+    .vegPlate{
+        width:8rem;
+        height:6rem;
+        top:55%;
+
+    }
+    
+    .broccoli{
+        top:0%;
+    }
+
+    .start-container{
+        padding-top: 3rem;
+    }
+}
+@media (max-width:360px){
+    .broccoli{
+        top:15%;
+    }
+
+}
+
+@media (min-width:1000px){
+    .carrots{ 
+        top:0%;
+        left:32%;
+    }
+    
+    .strawberry{
+        top:0%;
+        right:35%
+    }
+    
+    .vegPlate{
+        width:10rem;
+        height:8rem;
+        top:30%;
+        left:42%
+
+    }
+    
+    .broccoli{
+        width:8rem;
+        height:9rem;
+        top:10%;
+        left:38%
+
+    }
+
+    .start-container{
+        padding-top: 4rem;
+    }
+}
+
+@media (min-width:1200px){
+    .startPage-main-container{
+        width:100%
+    }
+    .carrots{ 
+        top:15%;
+        left:32%;
+    }
+    
+    .strawberry{
+        top:10%;
+        right:38%
+    }
+    
+    .vegPlate{
+        top:40%;
+        left:42%
+
+    }
+    
+    .broccoli{
+        top:25%;
+        left:37%
+
+    }
+}

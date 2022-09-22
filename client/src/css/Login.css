@@ -1,0 +1,58 @@
+.initial-page-container{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top:10rem;
+}
+
+.form-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:.2rem;
+    width:100%;
+    height:60%;
+  
+}
+.login-registerbtn{
+    border: 1px solid #FF0D0D;
+    margin-top:6rem;
+    
+    
+}
+
+.btn{
+       display:flex;
+    align-items:center ;
+    justify-content: center;
+    border-radius: .7rem;
+    font-family: 'Akaya Kanadaka', cursive;
+    color:#000000;
+}
+
+.login-registerbtn, .login-register-form-controls{
+    background: #FFFFFF;
+    width: 15rem;
+    height: 2.7rem;
+      opacity: 0.5;
+      box-shadow: 0px 8px 27px -7px rgba(79,79,79,0.59);
+      -webkit-box-shadow: 0px 8px 27px -7px rgba(79,79,79,0.59);
+      -moz-box-shadow: 0px 8px 27px -7px rgba(79,79,79,0.59);
+
+   
+}
+
+.login-register-form-controls{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding-left:.2rem;
+}
+
+.login-registerbtn:hover{
+    background: #b9b8b8;
+}

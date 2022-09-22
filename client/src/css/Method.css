@@ -1,0 +1,17 @@
+.add-method{
+    height:14rem;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.add-method textarea{
+    height:7rem;
+    margin-bottom:2rem;
+    position: relative;
+    
+}
+
+#method--btn{
+    position: absolute;
+    bottom:2rem
+}

@@ -1,0 +1,25 @@
+.message-box-container{
+    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    z-index:5
+    
+}
+
+
+.message-box-inner-container{
+    margin: 20rem auto;
+    padding:1rem;
+    background: #fff;
+    border-radius: .5rem;
+    width: 70%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
