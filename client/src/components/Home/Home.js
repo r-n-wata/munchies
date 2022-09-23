@@ -44,7 +44,7 @@ export default function Home (){
 
         getRecipes()
 
-            
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             }, [])
 
             console.log(data)
@@ -59,11 +59,9 @@ export default function Home (){
                 //  b = Number(b.timePlanned.replace(':', '').replace('  ', ''))
                 return  a.timePlanned.localeCompare(b.timePlanned)
             
-                }).filter((element) => {
-            if (currentTime <= element.timePlanned) {
-                return element
-            }
-        }).map(el => {
+                }).filter((element) => currentTime <= element.timePlanned && element
+            
+        ).map(el => {
             return (
                  <section className="home-recipe" style={ el.image && { backgroundImage: `url(${ el.image })`}}>
                     {/* <img src={nextRecipe.image} alt='recipe img' /> */}
@@ -84,8 +82,7 @@ export default function Home (){
    
     console.log(sortedData)
     
-    // get image of first item in sorted data
-    const nextRecipe = sortedData[0]
+ 
 
 
     // console.log(token?.user)

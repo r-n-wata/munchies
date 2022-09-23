@@ -11,7 +11,7 @@ export default function Calendar ( { setSelectedTime } ) {
     const seconds = selectedDate.getSeconds()
     useEffect(() =>{
        setSelectedTime(`${hours}:${minutes}:${seconds}`) 
-    }, [seconds, hours, minutes])
+    }, [seconds || ''])
     
     
     return (

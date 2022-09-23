@@ -12,9 +12,7 @@ import MessageBox from '../Messege';
 
 
 export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
-    const { auth } = useAuth()
 
-    // console.log(updateRecipeData.ingredients)
     const [name, setName]= useState(updateRecipeData!== undefined ? updateRecipeData.name : '' )
     const [servings, setServings] = useState(updateRecipeData!== undefined ? updateRecipeData.servings : '')
     const [category ,setCategory] = useState(updateRecipeData !== undefined? updateRecipeData.category : '')
@@ -76,8 +74,7 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
             }
         })
 
-    .then(response => {
-          const user= response.data.token
+    .then(()=> {
           setSave(true)
           setPreview(false)
        
@@ -114,8 +111,8 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
             }
         })
 
-    .then(response => {
-          const user= response.data.token
+    .then(() => {
+        
         console.log('updated')
        
     })

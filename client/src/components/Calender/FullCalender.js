@@ -61,8 +61,8 @@ export default function FullCalender(){
             }
         })
 
-    .then(response => {
-          const user= response.data.token
+    .then(() => {
+          
           setMessageBoxTitle('Success')
           setMessageBoxTitle('Successfully added the event!')
           setShowCalendarBtn(true)

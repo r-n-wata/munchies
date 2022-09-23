@@ -5,7 +5,7 @@ import {  Link } from 'react-router-dom';
 
 export default function Navigate() {
 
-    const fridge = require('../../imgs/meal-icons/icons8-fridge-50.png');
+    // const fridge = require('../../imgs/meal-icons/icons8-fridge-50.png');
     
     const home = require('../../imgs/meal-icons/icons8-home-24.png');
 

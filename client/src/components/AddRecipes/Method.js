@@ -13,7 +13,7 @@ export default function Method({ setMethodCount, methods, setMethods, edit, upda
     const [method, setMethod] = useState('')
     // const [methods, setMethods] = useState([])
     const [count, setCount] = useState(1)
-    const [addIngredients, setAddIngredients] = useState(false)
+    console.log(count)
 
     // const handleShowIngredients = () => {
     //     setAddIngredients(prevState => !prevState)

@@ -5,6 +5,7 @@ export default function RecipeCard({ image, name, id, setUserId, setCategory, se
 
     const [valid, setValid] = useState(null)
     // sets id that is clicked
+    console.log(valid)
     const handleClick = () => {
         if(setUserId !== undefined){
           setUserId(id)  
@@ -26,8 +27,9 @@ export default function RecipeCard({ image, name, id, setUserId, setCategory, se
         .then((res) => {
             setValid(res.status === 200)
         }).catch(() => setValid(false))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    const placeholderImg = require('../../imgs/image-placeholder.jpg')
+    
 
     return(
         

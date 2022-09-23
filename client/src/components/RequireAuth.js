@@ -3,7 +3,7 @@ import useAuth from "../hooks/useAuth";
 
 const RequiredAuth = () =>{
     const { auth } = useAuth();
-    const location = useLocation();
+
     const token = localStorage.getItem('token')
 
     console.log(auth.user)

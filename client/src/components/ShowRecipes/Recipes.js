@@ -1,8 +1,5 @@
 import {React, useEffect, useState} from "react";
-import Navigate from "../Navigation/Navigation";
 import RecipeCard from "./RecipeCard";
-// import useAuth from '../../hooks/useAuth'
-import jwtDecode from "jwt-decode";
 import '../../css/Recipes.css'
 import axios from "../../api/axios";
 import Recipe from "./Recipe";
@@ -23,6 +20,7 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
     const [clickedCatergory, setClickedCatergory] = useState('')
 
 
+    
     const [dataDietary, setDataDietary] = useState(dietary)
     const [clickedDiet, setClickedDiet] = useState('')
    
@@ -33,7 +31,7 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
 
     // const [updateRecipe, setUpdateRecipe] = useState(false)
 
-    const token = localStorage.getItem("token");
+   console.log(add, back)
 
     useEffect(() =>{
 
@@ -63,23 +61,15 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
 
         getRecipes()
 
-            
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             }, [])
 
 
     
 
-    const categoriesRecipe = data.filter(obj => {
-        if (obj['category'] === clickedCatergory) return obj
-    })
+    const categoriesRecipe = data.filter(obj => obj['category'] === clickedCatergory && obj)
 
-    const dietariesRecipe = data.filter(obj => {
-        if (obj['dietary'] === clickedDiet) {
-           
-           return obj
-        }
-        
-    })
+    const dietariesRecipe = data.filter(obj => obj['dietary'] === clickedDiet && obj )
 
  
 
@@ -173,15 +163,11 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
       if(setRecipeID !== undefined){
         setRecipeID(selectedRecipeIDForCalender)
         // setSelectRecipe(prevState => !prevState)
-    }  
+    }  // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
      
 
-    const recipe = data.filter(obj => {
-        if (Object.values(obj).indexOf(id) > -1) {
-            return obj
-        }
-    })
+    const recipe = data.filter(obj => Object.values(obj).indexOf(id) > -1 && obj )
 
     
 

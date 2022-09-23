@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Navigate from "../Navigation/Navigation";
-import useAuth from '../../hooks/useAuth'
-import AuthContext from "../../context/AuthProvider";
 import '../../css/Recipes.css'
 import Recipes from "./Recipes";
 

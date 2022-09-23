@@ -23,12 +23,12 @@ export default function AddRecipeToCalender({ date, recipeID, setRecipeID, showC
        
     }
 
-    const handleCancelSave = () => {
-        setSelectRecipe(false)
-        setSelectedRecipeName('')
-        setSelectedRecipeImg('')
+    // const handleCancelSave = () => {
+    //     setSelectRecipe(false)
+    //     setSelectedRecipeName('')
+    //     setSelectedRecipeImg('')
         
-    }
+    // }
     
 
     const idLen = recipeID.length > 0 
@@ -81,7 +81,7 @@ export default function AddRecipeToCalender({ date, recipeID, setRecipeID, showC
                 getRecipes()
                 
                     
-                    }, [recipeEventName])
+                    }, [recipeEventName || ''])
         
         const handleFindRecipeBtn = (event) =>{
             

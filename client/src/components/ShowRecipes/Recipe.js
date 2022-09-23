@@ -1,7 +1,6 @@
-import { React, useState } from "react";
+import { React } from "react";
 import ShowIngredients from "./ShowIngredients";
 import '../../css/Recipe.css'
-import AddRecipeInfo from "../AddRecipes/AddRecipeInfo";
 
 export default function Recipe({ data, id, setSelectedRecipeIDForCalender, setSelectRecipe, setSelectedRecipeName, selectRecipe, setShowSaveBtn, setShowCalendarBtn, selectedRecipeName, setSelectedRecipeImg, updateRecipe, setUpdateRecipe, updateRecipeImage, preview  }){
    console.log(data.image)
