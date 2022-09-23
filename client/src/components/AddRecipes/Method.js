@@ -1,13 +1,11 @@
 
 import { useState } from 'react'
-import axios from 'axios'
 import '../../css/Method.css'
-import AddIngredients from './AddIngredients'
-import Navigate from '../Navigation/Navigation'
 
 
 
-export default function Method({ setShowAddMethods, name, servings, category, dietary, image, setMethodCount, methods, setMethods, edit, updateRecipeMethods }) {
+
+export default function Method({ setMethodCount, methods, setMethods, edit, updateRecipeMethods }) {
 
     // const { auth, setAuth }  = useContext(AuthContext)
 
@@ -17,10 +15,10 @@ export default function Method({ setShowAddMethods, name, servings, category, di
     const [count, setCount] = useState(1)
     const [addIngredients, setAddIngredients] = useState(false)
 
-    const handleShowIngredients = () => {
-        setAddIngredients(prevState => !prevState)
+    // const handleShowIngredients = () => {
+    //     setAddIngredients(prevState => !prevState)
 
-    }
+    // }
    
     
 
@@ -56,10 +54,10 @@ export default function Method({ setShowAddMethods, name, servings, category, di
     }
 
   
-    const handleBackBtn = () =>{
-        setShowAddMethods(prevState => !prevState)
+    // const handleBackBtn = () =>{
+    //     setShowAddMethods(prevState => !prevState)
         
-    }
+    // }
 console.log(methods.join('\n'))
     return (
      

@@ -1,8 +1,8 @@
 import React from "react";
 import Recipe from '../ShowRecipes/Recipe'
-import MessageBox from '../Messege';
 
-export default function Preview({ handleSubmitRecipe, data, setEdit, setPreview, preview, handleUpdateRecipe, updateRecipeData, image }){
+
+export default function Preview({  data, setEdit, setPreview, preview, handleUpdateRecipe}){
     
     const handleClick = () => {
         setEdit(true)

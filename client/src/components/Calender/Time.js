@@ -1,7 +1,7 @@
 
 import { React, useEffect, useState} from "react";
-import { DatePicker, TimePicker } from "@material-ui/pickers";
-import { alpha } from '@material-ui/core/styles'
+import {  TimePicker } from "@material-ui/pickers";
+
 
 
 export default function Calendar ( { setSelectedTime } ) {
@@ -11,7 +11,7 @@ export default function Calendar ( { setSelectedTime } ) {
     const seconds = selectedDate.getSeconds()
     useEffect(() =>{
        setSelectedTime(`${hours}:${minutes}:${seconds}`) 
-    }, [seconds])
+    }, [seconds, hours, minutes])
     
     
     return (

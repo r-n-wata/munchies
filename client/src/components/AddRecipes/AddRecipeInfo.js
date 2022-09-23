@@ -8,7 +8,6 @@ import Method from './Method';
 import AddIngredients from './AddIngredients';
 import Preview from './Preview';
 import MessageBox from '../Messege';
-// import '../css/Home.css'
 
 
 
@@ -21,11 +20,9 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
     const [category ,setCategory] = useState(updateRecipeData !== undefined? updateRecipeData.category : '')
     const [dietary, setDietary] = useState(updateRecipeData !== undefined? updateRecipeData.dietary :'')
     const [image, setImage] = useState(updateRecipeData !== undefined? updateRecipeData.image :'')
-    const [refresh, setRefresh] = useState(false)
     const [userID, setUserID] = useState('')
     const [count, setCount] = useState(1)
     const [showAddMethods, setShowAddMethods] = useState(false)
-    const [allIngredients, setAllIngredients] = useState(updateRecipeData !== undefined ? updateRecipeData.ingredients : {amounts: '', units: '', ingredients: ''})
     const [methods, setMethods] = useState(updateRecipeData !== undefined ? [...updateRecipeData.method] :[])
     const [ingredientCounnt, setIngredientCount] = useState(1)
     const [medthodCount, setMethodCount] = useState(1)
@@ -33,11 +30,9 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
     const [edit, setEdit] = useState(updateRecipe !== undefined ? updateRecipe : false)
     const stawberry =  require('../../imgs/vegetables/strawberry.png');
     const [save, setSave] = useState(false)
-    const [message, setMessage] = useState(false)
-
-
     const [ingredients, setIngredients] = useState(updateRecipeData !== undefined ? [...updateRecipeData.ingredients] : []) 
 
+    console.log(userID, count, showAddMethods)
     const recipeObj = [{
         category: category,
         dietary: dietary,
@@ -50,12 +45,6 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
     }]
 
     
-
-    const handleShowMethods = () => {
-        setShowAddMethods(prevState => !prevState)
-
-
-    }
 
     const handlePreview = () => {
 
@@ -127,8 +116,6 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
 
     .then(response => {
           const user= response.data.token
-        //   setSave(true)
-        //   setPreview(false)
         console.log('updated')
        
     })

@@ -1,28 +1,21 @@
 import { React, useState, useEffect} from "react";
-import Navigate from "../Navigation/Navigation";
 import Recipes from "../ShowRecipes/Recipes";
 import Time from "./Time";
-import jwtDecode from "jwt-decode";
 import axios from "../../api/axios";
-import MessageBox from "../Messege";
 import Recipe from "../ShowRecipes/Recipe";
 
 
 export default function AddRecipeToCalender({ date, recipeID, setRecipeID, showChooseRecipes, setSelectRecipe, selectRecipe, setSelectedTime, selectedDate, retrievedEvents, setRetrievedEvents, message, status, setSelectedRecipeName, setShowCalendarBtn, setShowSaveBtn, selectedRecipeName, selectedRecipeImg, setSelectedRecipeImg }){
 
-    const [chooseReciepeID, setChooseRecipeID] = useState('')
-    const [name, setName] = useState('')
-    const [selectedRecipesName, setSelectedRecipesName] = useState('')
-    const [showTime, setShowTime] = useState(false) 
+   
+    let showTime = false
     const [data, setData] = useState([])
     const [alert , setAlert ] = useState( status ? true : false)
-    const [showAddRecipeBtn, setShowAddRecipeBtn] = useState(false)
     const [recipeEventName, setRecipeEventName] = useState('')
     const [recipeEventData, setRecipeEventData] = useState([])
     const [showRecipe, setShowRecipe] = useState(false)
     const loading = require('../../imgs/gifs/loading.gif');
-    const [cancelSave, setCancelSave] = useState(false)
-
+    console.log(alert)
     const handleSelectRecipe = () => {
         setSelectRecipe(prevState => !prevState)
         setShowCalendarBtn(prevState => !prevState)

@@ -1,10 +1,10 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import '../../css/Login.css'
-const url = require('../../api/axios').default
-// import AuthContext from '../context/AuthProvider';
+import {  Link } from 'react-router-dom';
+
 
 
 export default function Login() {
@@ -18,7 +18,7 @@ export default function Login() {
     const [password, setPassword] = useState('')
     const [errMesage, setErrMessage] = useState('')
 
-    
+    console.log(errMesage)
     async function loginUser(event){
         // prevents the default behaviour of a form i.e. when you submit form the whole page will automatically refresh
         event.preventDefault()
@@ -85,7 +85,11 @@ export default function Login() {
                 </form>
 
 
-                <a href='' className='login-registerbtn btn'>Register</a>
+                {/* <a href='' className='login-registerbtn btn'>Register</a> */}
+
+                <Link to='/login' className='login-registerbtn btn'>
+                    Register
+                        </Link>
             
            
                

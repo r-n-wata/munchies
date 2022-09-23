@@ -1,6 +1,6 @@
 import React from "react";
 import '../../css/Start.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Start(){
 

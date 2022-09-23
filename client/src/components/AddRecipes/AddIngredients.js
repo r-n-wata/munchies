@@ -1,30 +1,16 @@
 
 import { useState } from 'react'
-import axios from 'axios'
-import '../../css/AddIngredients.css'
-import jwt from 'jwt-decode'
-import AddRecipeInfo from './AddRecipeInfo'
 import { useNavigate } from 'react-router-dom'
 
 
 
-export default function AddIngredients({ setShowAddIngredients, methods, name, servings, category, dietary, image, setIngredients, setIngredientCount, ingredients, edit,updateRecipeIngredients }) {
-
-    // const { auth, setAuth }  = useContext(AuthContext)
-
+export default function AddIngredients({ setIngredients, setIngredientCount, ingredients, edit,updateRecipeIngredients }) {
 
     const [amount, setAmount] = useState('')
     const [unit, setUnit] = useState('')
     const [ingredient, setIngredient] = useState('')
-    // const [ingredients, setIngredients] = useState([])
-    const [userID, setUserID] = useState('')
-    const [refresh, setRefresh] = useState(false)
-    const navigate = useNavigate();
     const to = '/addrecipe'
-    // const [allIngredients, setAllIngredients] = useState({amounts: '', units: '', ingredients: ''})
 
-   
-    
     const addIngredient = (e) =>{
         e.preventDefault();
         setIngredients(prevState => [...prevState, ingredient + ' ' + amount + unit])
@@ -104,10 +90,6 @@ export default function AddIngredients({ setShowAddIngredients, methods, name, s
 
                     </>}
                          
-
-                    {/* <button type='button' className='recipe-border btn' id='addrecipe-btn add-ingredients' onClick={handleSubmit}>Save Recipe!</button> */}
-
-                     {/* <button type='button' className=' recipe-border btn' id='addrecipe-back add-ingredients' onClick={handleRefreshBtn}>Restart</button> */}
 
                 
            

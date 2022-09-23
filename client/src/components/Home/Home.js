@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Users from "../Users";
 import Navigate from "../Navigation/Navigation";
 import useAuth from '../../hooks/useAuth'
-import AuthContext from "../../context/AuthProvider";
 import '../../css/Home.css'
-import jwtDecode from "jwt-decode";
 import axios from "../../api/axios";
 
 // import jwt from 'jsonwebtoken'
