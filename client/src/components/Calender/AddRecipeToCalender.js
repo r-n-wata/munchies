@@ -80,8 +80,8 @@ export default function AddRecipeToCalender({ date, recipeID, setRecipeID, showC
         
                 getRecipes()
                 
-                    
-                    }, [recipeEventName || ''])
+                    // eslint-disable-next-line react-hooks/exhaustive-deps
+                    }, [recipeEventName])
         
         const handleFindRecipeBtn = (event) =>{
             

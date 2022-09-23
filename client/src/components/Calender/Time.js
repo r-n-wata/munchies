@@ -11,7 +11,8 @@ export default function Calendar ( { setSelectedTime } ) {
     const seconds = selectedDate.getSeconds()
     useEffect(() =>{
        setSelectedTime(`${hours}:${minutes}:${seconds}`) 
-    }, [seconds || ''])
+       // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [seconds ])
     
     
     return (

@@ -12,7 +12,7 @@ import AddRecipeInfo from "../AddRecipes/AddRecipeInfo";
 
 export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectRecipe, selectRecipe, setShowSaveBtn, setShowCalendarBtn, setSelectedRecipeImg, selectedRecipeName, updateRecipe, setUpdateRecipe }){
     const [data, setData] = useState([])
-    const [add, setAdd] = useState(false)
+    const add = false
     const [id, setId] = useState('')
     const [back, setBack] = useState(false)
     const [selectedRecipeIDForCalender, setSelectedRecipeIDForCalender] = useState('')
