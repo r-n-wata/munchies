@@ -9,7 +9,7 @@ export default function AddIngredients({ setIngredients, setIngredientCount, ing
     const [amount, setAmount] = useState('')
     const [unit, setUnit] = useState('')
     const [ingredient, setIngredient] = useState('')
-    const to = '/addrecipe'
+   
 
     const addIngredient = (e) =>{
         e.preventDefault();
