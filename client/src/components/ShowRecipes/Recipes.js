@@ -16,12 +16,12 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
     const [id, setId] = useState('')
     const [back, setBack] = useState(false)
     const [selectedRecipeIDForCalender, setSelectedRecipeIDForCalender] = useState('')
-    const categoryData = new categoryDataImgs
+    const categoryData = new categoryDataImgs()
     const [clickedCatergory, setClickedCatergory] = useState('')
 
 
     
-    const dataDietary = new dietary
+    const dataDietary = new dietary()
     const [clickedDiet, setClickedDiet] = useState('')
    
 
