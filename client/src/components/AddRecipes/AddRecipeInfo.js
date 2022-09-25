@@ -1,7 +1,6 @@
 import { useState} from 'react'
 import Navigate from '../Navigation/Navigation';
 import axios from '../../api/axios';
-import jwt from 'jwt-decode'
 import '../../css/AddRecipe.css'
 import Method from './Method';
 import AddIngredients from './AddIngredients';
