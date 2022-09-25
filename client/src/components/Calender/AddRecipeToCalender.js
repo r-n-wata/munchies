@@ -5,7 +5,7 @@ import axios from "../../api/axios";
 import Recipe from "../ShowRecipes/Recipe";
 
 
-export default function AddRecipeToCalender({ date, recipeID, setRecipeID, showChooseRecipes, setSelectRecipe, selectRecipe, setSelectedTime, selectedDate, retrievedEvents, setRetrievedEvents, message, status, setSelectedRecipeName, setShowCalendarBtn, setShowSaveBtn, selectedRecipeName, selectedRecipeImg, setSelectedRecipeImg }){
+export default function AddRecipeToCalender({ date, recipeID, setRecipeID, setSelectRecipe, selectRecipe, setSelectedTime, selectedDate, status, setSelectedRecipeName, setShowCalendarBtn, setShowSaveBtn, selectedRecipeName, selectedRecipeImg, setSelectedRecipeImg }){
 
    
     let showTime = false
@@ -145,7 +145,7 @@ export default function AddRecipeToCalender({ date, recipeID, setRecipeID, showC
             {date && !idLen && !showRecipe && !selectRecipe && <button type="button" className='add-recipe-event' onClick={ handleSelectRecipe }>{ !selectRecipe ? 'recipe': 'cancel'}</button>}
 
     
-                {  !selectRecipe && !showRecipe&&
+                {  !selectRecipe && !showRecipe && selectedDate &&
 
                     <div className="add-event-to-calender-container">
 
@@ -154,6 +154,7 @@ export default function AddRecipeToCalender({ date, recipeID, setRecipeID, showC
                             showTime={showTime} 
                             date={date}
                             setSelectedTime = {setSelectedTime}
+                            selectedDate = { selectedDate }
                         />
 
                         <h2>{ selectedRecipeName }</h2>

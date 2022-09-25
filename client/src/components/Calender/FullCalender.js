@@ -128,6 +128,7 @@ export default function FullCalender(){
                     setSelectedRecipeImg ={ setSelectedRecipeImg }
                     
                     
+                    
                     />
                     {
                         showSaveBtn &&  <button type='submit' className={selectedDate ? "recipes-btns toFront " : ' recipes-btns  toBack'} id='save-event'  onClick={ handleSubmit }>Save Event</button>

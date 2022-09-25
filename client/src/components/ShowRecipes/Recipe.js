@@ -2,7 +2,7 @@ import { React } from "react";
 import ShowIngredients from "./ShowIngredients";
 import '../../css/Recipe.css'
 
-export default function Recipe({ data, id, setSelectedRecipeIDForCalender, setSelectRecipe, setSelectedRecipeName, selectRecipe, setShowSaveBtn, setShowCalendarBtn, selectedRecipeName, setSelectedRecipeImg, updateRecipe, setUpdateRecipe, updateRecipeImage, preview  }){
+export default function Recipe({ data, id, setSelectedRecipeIDForCalender, setSelectRecipe, setSelectedRecipeName, selectRecipe, setShowSaveBtn, setShowCalendarBtn, selectedRecipeName, setSelectedRecipeImg, updateRecipe, setUpdateRecipe, updateRecipeImage, preview, setRecipeID  }){
    console.log(data.image)
  
     let recipeObj = data[0]
@@ -36,6 +36,7 @@ export default function Recipe({ data, id, setSelectedRecipeIDForCalender, setSe
         setSelectedRecipeIDForCalender(recipeObj._id)
         setSelectedRecipeName(recipeObj.name)
         setSelectedRecipeImg(recipeObj.image)
+        setRecipeID(recipeObj._id)
         
        
     }

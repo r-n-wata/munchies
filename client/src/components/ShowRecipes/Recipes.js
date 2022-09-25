@@ -16,12 +16,12 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
     const [id, setId] = useState('')
     const [back, setBack] = useState(false)
     const [selectedRecipeIDForCalender, setSelectedRecipeIDForCalender] = useState('')
-    const categoryData = categoryDataImgs
+    const categoryData = new categoryDataImgs
     const [clickedCatergory, setClickedCatergory] = useState('')
 
 
     
-    const dataDietary = dietary
+    const dataDietary = new dietary
     const [clickedDiet, setClickedDiet] = useState('')
    
 
@@ -106,6 +106,8 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
             />
         )
     })
+
+    console.log(categoryData)
 
     const dietaries = dataDietary.map(recipe => {
        
@@ -249,6 +251,7 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
                                 selectedRecipeName = { selectedRecipeName }
                                 updateRecipe= { updateRecipe }
                                 setUpdateRecipe= { setUpdateRecipe }
+                                setRecipeID = { setRecipeID }
 
                                 />}
                 
