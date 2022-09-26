@@ -28,8 +28,8 @@ export default function Routess() {
            
            
           </Route>
-          {/* catch all */}
-
+          
+{/* catch all */}
           {/* <Route path='/*' element={<Missing/>}  /> */}
 
         </Routes>
