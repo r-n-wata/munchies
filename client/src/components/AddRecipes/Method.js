@@ -74,10 +74,11 @@ console.log(methods.join('\n'))
                              type= 'text'
                              value={ method }
                              onChange={(e) => setMethod(e.target.value)}
+                             className='border-2 border-gray-400 rounded'
                              ></textarea>
                      </label>
  
-                     <input type='submit' value='Add Method' className='addrecipe-btn' id='method--btn' onClick={handleBtn}/>
+                     <input type='submit' value='Add Method' className='addrecipe-btn border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-blue-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-40 cursor-pointer hover:bg-blue-600' id='method--btn' onClick={handleBtn}/>
  
                  </form>
                 }
@@ -95,7 +96,7 @@ console.log(methods.join('\n'))
                             defaultValue={  updateRecipeMethods ?  updateRecipeMethods : methods.join('\n')}></textarea>
                     </label>
 
-                    <input type='submit' value='Add Method' className='addrecipe-btn' id='method--btn' onClick={ handleBtn }/>
+                    <input type='submit' value='Add Method' className='addrecipe-btn border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-blue-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-40 cursor-pointer hover:bg-blue-600' id='method--btn' onClick={ handleBtn }/>
 
                 </form>
 

@@ -81,7 +81,7 @@ export default function Register() {
                     className='login-register-form-controls'
                     />
 
-                    <input type='submit' value='Register' className='initial-btn' id='register-btn'/>
+                    <input type='submit' value='Register' className='border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-red-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-60 cursor-pointer hover:bg-red-600' />
 
                 </form>
             
@@ -89,7 +89,7 @@ export default function Register() {
                {errMesage && (
                <div className='err-container'>
                 <span>Opps..Account already in use</span>
-                <button className='login-btn'>Login</button>
+                <button className='border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-white text-gray-700 shadow mt-4 border-2 border-red-300 font-sans tracking-wide laptop:w-60 cursor-pointer hover:bg-gray-100'>Login</button>
                 </div>)}
 
             </div>

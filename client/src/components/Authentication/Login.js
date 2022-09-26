@@ -80,15 +80,15 @@ export default function Login() {
                     />
                     <br/>
 
-                    <input type='submit' value='Login' className='initial-btn'/>
+                    <input type='submit' value='Login' className='border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-red-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-60 cursor-pointer hover:bg-red-600'/>
 
                 </form>
 
 
                 {/* <a href='' className='login-registerbtn btn'>Register</a> */}
 
-                <Link to='/login' className='login-registerbtn btn'>
-                    Register
+                <Link to='/login' className='border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-white text-gray-700 shadow mt-4 border-2 border-red-300 font-sans tracking-wide laptop:w-60 cursor-pointer hover:bg-gray-100'>
+                    Signup
                         </Link>
             
            

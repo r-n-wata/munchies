@@ -157,8 +157,14 @@ export default function AddRecipeToCalender({ date, recipeID, setRecipeID, setSe
                             selectedDate = { selectedDate }
                         />
 
-                        <h2>{ selectedRecipeName }</h2>
-                        <img src={ selectedRecipeImg } className='add-event-to-calender-img' alt=''/>
+                        {selectedRecipeName && 
+                        
+                        <>
+                            <h2>{ selectedRecipeName }</h2>
+                            <img src={ selectedRecipeImg } className='add-event-to-calender-img' alt=''/>
+                        </>
+                        }
+                        
                         <h4>{ date }</h4>
 
                         { !selectedRecipeImg && 
