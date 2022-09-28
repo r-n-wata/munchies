@@ -46,7 +46,7 @@ export default function FullCalender(){
        
         
         e.preventDefault();
-        axios.post('http://localhost:2121/api/event/addevent', JSON.stringify({
+        axios.post('https://munchies-production.up.railway.app/api/event/addevent', JSON.stringify({
             recipeID: recipeID,
             recipeName: '',
             date: date,

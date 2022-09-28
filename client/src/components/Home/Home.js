@@ -33,7 +33,7 @@ export default function Home (){
             
           };
         async function getRecipes(event){
-            axios.get(`http://localhost:2121/api/event/find/recipes-of-the-day/${currentDate}`, config)
+            axios.get(`https://munchies-production.up.railway.app/api/event/find/recipes-of-the-day/${currentDate}`, config)
             .then(res => {
                 setData(res.data)
             })

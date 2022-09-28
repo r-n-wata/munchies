@@ -49,7 +49,7 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
         async function getRecipes(event){
            
             // prevents the default behaviour of a form i.e. when you submit form the whole page will automatically refresh
-            axios.get(`http://localhost:2121/api/recipes/find`, config)
+            axios.get(`https://munchies-production.up.railway.app/api/recipes/find`, config)
             .then(res => {
                 setData(res.data)
                 console.log(res.data)

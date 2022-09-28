@@ -58,7 +58,7 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
         const token = localStorage.getItem('token')
        
         e.preventDefault();
-        axios.post('http://localhost:2121/api/recipes/add', JSON.stringify({
+        axios.post('https://munchies-production.up.railway.app/api/recipes/add', JSON.stringify({
             name: name,
             servings: servings,
             category: category,
@@ -95,7 +95,7 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
         const token = localStorage.getItem('token')
        
         e.preventDefault();
-        axios.put(`http://localhost:2121/api/recipes/update/${updateRecipeData._id}`, {
+        axios.put(`https://munchies-production.up.railway.app/api/recipes/update/${updateRecipeData._id}`, {
             name: name,
             servings: servings,
             category: category,
