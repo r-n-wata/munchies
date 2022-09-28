@@ -17,35 +17,35 @@ export default function Navigate() {
     const logo = require('../../imgs/vegetables/logo-ish.png');
     return (
 
-        <nav className="nav-bar">
-            <div className="nav-bar--icons--logo"><img src={ logo } alt='logo' className="logo-img"/></div>
-             <ul className="nav-bar--icons-container">
+        <nav className="flex fixed bottom-0 w-full h-20 z-40 items-center mt-1 bg-gray-100 desktop:flex-col desktop:w-1/5 desktop:left-0 desktop:h-full desktop:justify-start desktop:top-0 desktop:bg-gray-300 ">
+            <div className="hidden desktop:block desktop:w-24 desktop:h-18"><img src={ logo } alt='logo' className=""/></div>
+             <ul className="flex w-full justify-around desktop:flex-col desktop:justify-start desktop:mt-1  desktop:bg-gray-300 desktop:h-full">
                
             
 
-                <li>
-                    <Link to='/calendar'>
-                        <img src={calender} alt=""/>
-                        <span>calender</span>
+                <li >
+                    <Link to='/calendar' className="flex flex-col items-center justify-center desktop:hover:bg-gray-400 desktop:h-20">
+                        <img src={calender} alt="" className="w-6"/>
+                        <span className="text-4" >calender</span>
                         </Link>
                 </li>
                 <li>
-                    <Link to='/addrecipe'>
-                        <img src={add} alt=""/>
-                        <span>add</span>
+                    <Link to='/addrecipe' className="flex flex-col items-center justify-center desktop:hover:bg-gray-400 desktop:h-20">
+                        <img src={add} alt="" className="w-6"/>
+                        <span className="text-4">add</span>
                         </Link>
                 </li>
                 <li>
-                        <Link to='/home'>
-                        <img src={home} alt=""/>
-                        <span>home</span>
+                        <Link to='/home' className="flex flex-col items-center justify-center desktop:hover:bg-gray-400 desktop:h-20">
+                        <img src={home} alt="" className="w-6"/>
+                        <span className="text-4">home</span>
                         </Link>
                 </li>
 
                 <li>
-                    <Link to='/recipes'>
-                        <img src={recipes} alt=""/>
-                        <span>recipes</span>
+                    <Link to='/recipes' className="flex flex-col items-center justify-center desktop:hover:bg-gray-400 desktop:h-20">
+                        <img src={recipes} alt="" className="w-6"/>
+                        <span className="text-4">recipes</span>
                         </Link>
                 </li>
 

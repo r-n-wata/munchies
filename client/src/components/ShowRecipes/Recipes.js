@@ -16,12 +16,16 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
     const [id, setId] = useState('')
     const [back, setBack] = useState(false)
     const [selectedRecipeIDForCalender, setSelectedRecipeIDForCalender] = useState('')
-    const categoryData = new categoryDataImgs()
+    // const categoryData = new categoryDataImgs()
+// please delete below code
+    const [categoryData, setCategoryData] = useState(categoryDataImgs)
     const [clickedCatergory, setClickedCatergory] = useState('')
 
 
     
-    const dataDietary = new dietary()
+    // const dataDietary = new dietary()
+    // please delete below code
+    const [dataDietary, setDataDietary] = useState(dietary)
     const [clickedDiet, setClickedDiet] = useState('')
    
 
@@ -33,36 +37,36 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
 
    console.log(add, back)
 
-    useEffect(() =>{
+    // useEffect(() =>{
 
         
-        const token = localStorage.getItem('token')
-        const config = {
-                headers: { Authorization: `Bearer ${token}` }
+    //     const token = localStorage.getItem('token')
+    //     const config = {
+    //             headers: { Authorization: `Bearer ${token}` }
             
-          };
-        setLoading(true)
-        async function getRecipes(event){
+    //       };
+    //     setLoading(true)
+    //     async function getRecipes(event){
            
-            // prevents the default behaviour of a form i.e. when you submit form the whole page will automatically refresh
-            axios.get(`http://localhost:2121/api/recipes/find`, config)
-            .then(res => {
-                setData(res.data)
-                console.log(res.data)
-            })
-            .catch(err => {
+    //         // prevents the default behaviour of a form i.e. when you submit form the whole page will automatically refresh
+    //         axios.get(`http://localhost:2121/api/recipes/find`, config)
+    //         .then(res => {
+    //             setData(res.data)
+    //             console.log(res.data)
+    //         })
+    //         .catch(err => {
         
-            console.log(err)
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-        }
+    //         console.log(err)
+    //         })
+    //         .finally(() => {
+    //             setLoading(false);
+    //         });
+    //     }
 
-        getRecipes()
+    //     getRecipes()
 
-            // eslint-disable-next-line react-hooks/exhaustive-deps
-            }, [])
+    //         // eslint-disable-next-line react-hooks/exhaustive-deps
+    //         }, [])
 
 
     
@@ -147,26 +151,17 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
         )
     })
 
-    // console.log(dietariesRecipe)
-   
-
-
-    // const handleAddBtn = () => {
-    //     setAdd(prevState => !prevState)
-    //     // setShowAddIngredients(false)
-    // }
-
+    
     const handleBackBtn = () => {
         setBack(prevState => !prevState)
         setId('')
     } 
 
-    useEffect(() => {
-      if(setRecipeID !== undefined){
-        setRecipeID(selectedRecipeIDForCalender)
-        // setSelectRecipe(prevState => !prevState)
-    }  // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    // useEffect(() => {
+    //   if(setRecipeID !== undefined){
+    //     setRecipeID(selectedRecipeIDForCalender)
+    // }  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [])
      
 
     const recipe = data.filter(obj => Object.values(obj).indexOf(id) > -1 && obj )
@@ -178,48 +173,48 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
             {
                 !updateRecipe && 
 
-                    <div className="recipe-body">
+                    <div className="h-full pl-10 pr-4 pt-8">
                         
                             {!id && !showCategoryRecipe && !showDietRecipe && !updateRecipe &&
                                 <>
 
-                                    <div id="recipes-recent-cards-container">
-                                        <div className="recipes-recent-cards-header">
-                                            <h4>Recent</h4>
+                                    <div id="recipes-recent-cards-container" className="mt-4">
+                                        <div>
+                                            <h4 className="text-sm">Recent</h4>
                                         </div>
-                                        <div id="recipes-recent-cards">
+                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2">
 
                                             {!loading ? recentRecipes : <Spinner
                                                 loading = { loading }/>}
                                         </div>
                                     </div>
 
-                                    <div id="recipes-recent-cards-container">
-                                        <div className="recipes-recent-cards-header">
-                                            <h4>Favourites</h4>
+                                    <div id="recipes-recent-cards-container" className="mt-4">
+                                        <div >
+                                            <h4 className="text-sm">Favourites</h4>
                                         </div>
-                                        <div id="recipes-recent-cards">
+                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2">
 
                                         {!loading ? recentRecipes : <Spinner
                                                 loading = { loading }/>}
                                         </div>
                                     </div>
 
-                                    <div id="recipes-recent-cards-container">
-                                        <div className="recipes-recent-cards-header">
-                                            <h4>Categories</h4>
+                                    <div id="recipes-recent-cards-container" className="mt-4">
+                                        <div >
+                                            <h4 className="text-sm">Categories</h4>
                                         </div>
-                                        <div id="recipes-recent-cards">
+                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2">
 
                                         {categories}
                                         </div>
                                     </div>
 
-                                    <div id="recipes-recent-cards-container">
-                                        <div className="recipes-recent-cards-header">
-                                            <h4>Dietaries</h4>
+                                    <div id="recipes-recent-cards-container" className="mt-4">
+                                        <div >
+                                            <h4 className="text-sm">Dietaries</h4>
                                         </div>
-                                        <div id="recipes-recent-cards">
+                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2">
                                         {dietaries}
                                         
                                         </div>

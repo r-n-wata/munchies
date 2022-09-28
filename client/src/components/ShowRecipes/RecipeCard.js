@@ -1,7 +1,7 @@
 import {React, useEffect, useState} from "react";
 
 
-export default function RecipeCard({ image, name, id, setUserId, setCategory, setDiet, setShowCategoryRecipe, setShowDietRecipe, loading }){
+export default function RecipeCard({ image, name, id, setUserId, setCategory, setDiet, setShowCategoryRecipe, setShowDietRecipe }){
 
     const [valid, setValid] = useState(null)
     // sets id that is clicked
@@ -22,6 +22,8 @@ export default function RecipeCard({ image, name, id, setUserId, setCategory, se
       
     }
 
+    const data = name === undefined ? true : false
+
     useEffect(() => {
         fetch(image)
         .then((res) => {
@@ -36,12 +38,12 @@ export default function RecipeCard({ image, name, id, setUserId, setCategory, se
         <>
         {
 
-            name.length > 0 ? <div className="recipe-small-card" onClick={ handleClick }>
-                <img src={image} alt="" className="recipe-img"/>
-                <h2 className="recipe-card-title">{name}</h2>
+            !data  ? <div className="w-full" onClick={ handleClick }>
+                <img src={image} alt="" className="w-32 h-20"/>
+                <h2 className="text-xs">{name}</h2>
             
                 </div> : 
-                <div className="recipe-small-card" onClick={ handleClick }>
+                <div className="w-full h-full" onClick={ handleClick }>
                 
                     <h2 className="recipe-card-title recipe-img">No recipes found!</h2>
             

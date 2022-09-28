@@ -69,7 +69,7 @@ export default function AddIngredients({ setIngredients, setIngredientCount, ing
                            
                             <br/>
 
-                            <input type='submit' value='Add Ingredient' className='addrecipe-btn border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-blue-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-40 cursor-pointer hover:bg-blue-600'/>
+                            <input type='submit' value='Add Ingredient' className=' border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-blue-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-40 cursor-pointer hover:bg-blue-600'/>
 
                     </form>}
 

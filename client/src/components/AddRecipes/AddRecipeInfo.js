@@ -7,6 +7,7 @@ import Method from './Method';
 import AddIngredients from './AddIngredients';
 import Preview from './Preview';
 import MessageBox from '../Messege';
+import Header from '../Section-header';
 
 
 
@@ -126,19 +127,20 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
     
     return (
 
-        <section className={!updateRecipe ? "section-container": ""}>
-            <div className="header addrecipe-header">
-                <h1 className='header-title'>add a Recipe!</h1>
-                <img src={ stawberry } alt='' className="addrecipes-img"/>
+        <section className={!updateRecipe ? "relative h-screen desktop:w-4/5 desktop:absolute desktop:right-0 overflow-y-hidden desktop:pb-8": ""}>
 
-            </div>
+            <Header
+                title = { `add a Recipe!`}
+                image = { stawberry }
+                color= { 'violet' }
+            />
 
-            <div className="content addrecipe-content">
+            <div className="h-5/6 w-full absolute z-0 bottom-0 rounded-t-3xl bg-gray-100 overflow-y-scroll pb-20 desktop:flex desktop:w-full desktop:pb-8">
 
                 {!preview && <>
                 
-                    <section className='addrecipe--ingredients'>
-                        <h2 className='addrecipe--heading'>{ !edit ? `Add Ingredient ${ ingredientCounnt}.` : 'Ingredients'}</h2>
+                    <section className='flex flex-col items-start pl-10 pt-10 desktop:w-1/2'>
+                        <h2 className='font-title w-1/2 text-gray-700 text-xl desktop:text-2xl desktop:w-full'>{ !edit ? `Add Ingredient ${ ingredientCounnt}.` : 'Ingredients'}</h2>
                         <AddIngredients 
                             setIngredients={ setIngredients }
                             ingredients = { ingredients }
@@ -151,9 +153,9 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
                     </section>
                     
                     
-                    <div className='addrecipe-info'>
-                        <section className='addrecipe--methods'>
-                        <h2 className='addrecipe--heading'>{!edit ? `Add Method ${medthodCount}.` : 'Methods'}</h2>
+                    <div className='flex flex-col items-start pt-10 pb-4 pl-10 w-1/2'>
+                        <section className='flex flex-col items-start'>
+                        <h2 className='font-title w-full text-gray-700 text-xl  desktop:text-2xl desktop:w-full'>{!edit ? `Add Method ${medthodCount}.` : 'Methods'}</h2>
                         <Method 
                             count = { setCount }
                             setMethods = { setMethods }
@@ -171,11 +173,11 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
 
                         />
                          </section>
-                        <h2 className='addrecipe--heading'>Add Recipe Info</h2>
+                        <h2 className='font-title w-1/2 text-gray-700 text-xl mt-8 desktop:text-2xl w-full'>Add Recipe Info</h2>
 
-                        <form  className='form-container addrecipe'>
+                        <form  className='relative flex flex-col items-start hap-1 w-full h-1/2 mt-4'>
 
-                        <label >
+                        <label className='flex flex-col text-gray-800' >
 
                             Name:
                             <input
@@ -183,19 +185,19 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
                                 onChange={(e) => setName(e.target.value)}
                                 type='text' 
                                 required
-                                className='login-register-form-controls'
+                                className='h-8 border-2 border-gray-300 rounded mt-1'
                                 defaultValue = { updateRecipeData !== undefined ? updateRecipeData.name : name}
                                 />
                         </label>
                     
                         <br/>
-                        <label>
+                        <label className='flex flex-col text-gray-800'>
                             Servings:
                             <input 
                                 // value={servings}
                                 onChange={(e) => setServings(e.target.value)}
                                 type='number' 
-                                className='login-register-form-controls'
+                                className='h-8 border-2 border-gray-300 rounded mt-1'
                                 defaultValue={ updateRecipeData !== undefined ? updateRecipeData.servings : servings}
                             />
 
@@ -203,9 +205,9 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
                             
                         <br/>
 
-                        <label id='addrecipe--select'>
+                        <label className='flex flex-col text-gray-800'>
                             Category:
-                            <select onChange={(e) => setCategory(e.target.value)} defaultValue={ updateRecipeData !== undefined ? updateRecipeData.category : category }>
+                            <select onChange={(e) => setCategory(e.target.value)} defaultValue={ updateRecipeData !== undefined ? updateRecipeData.category : category } className='h-8 border-2 border-gray-300 rounded mt-1' >
                                 <option value="select">select</option>
                                 <option value="breakfast">Breakfast</option>
                                 <option value="lunch">Lunch</option>
@@ -226,10 +228,10 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
                     
                         <br/>
 
-                        <label id='addrecipe--select'>
+                        <label className='flex flex-col text-gray-800'>
                             Dietry:
 
-                            <select onChange={(e) => setDietary(e.target.value)} defaultValue={ updateRecipeData !== undefined ? updateRecipeData.dietary : dietary }>
+                            <select onChange={(e) => setDietary(e.target.value)} defaultValue={ updateRecipeData !== undefined ? updateRecipeData.dietary : dietary } className='h-8 border-2 border-gray-300 rounded mt-1'>
                                 <option value="select">select</option>
                                 <option value="cholesterol-friendly">cholesterol-friendly</option>
                                 <option value="dairy-free">dairy-free</option>
@@ -254,14 +256,14 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
                         
                         <br/>
 
-                        <label >
+                        <label className='flex flex-col text-gray-800'>
                             Image:
                             <input 
                                 // value={ image }
                                 onChange={(e) => setImage(e.target.value)}
                                 type='text'
                                 required 
-                                className='login-register-form-controls'
+                                className='h-8 border-2 border-gray-300 rounded mt-1'
                                 defaultValue={ updateRecipeData !== undefined ? updateRecipeData.image : image }
                             /> 
                         </label>
@@ -269,7 +271,7 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
                         <br/>
 
                         {/* <input type='submit' value='preview' className='addrecipe-btn'/> */}
-                        <button type='button'  onClick={ handlePreview } className='addrecipe-btn'>preview</button>
+                        <button type='button'  onClick={ handlePreview } className=' border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-blue-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-40 cursor-pointer hover:bg-blue-600 desktop:h-16'>preview</button>
 
                     </form>
                 

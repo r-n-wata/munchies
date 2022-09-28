@@ -3,6 +3,7 @@ import Navigate from "../Navigation/Navigation";
 import useAuth from '../../hooks/useAuth'
 import '../../css/Home.css'
 import axios from "../../api/axios";
+import Header from "../Section-header";
 
 // import jwt from 'jsonwebtoken'
 
@@ -88,16 +89,18 @@ export default function Home (){
     // console.log(token?.user)
    
     return (
-        <section className="home section-container">
-            <div className="header home-header">
-                <h1 className="header-title">Hi { userName }!</h1>
-                <img src={carrot} alt='' className="header-img"/>
-            </div>
-            <div className="content header-content">
+        <section className="relative h-screen desktop:w-4/5 desktop:absolute desktop:right-0 overflow-y-hidden ">
+
+            <Header
+                title = { `Hi ${ userName }!`}
+                image = { carrot }
+                color= { 'green' }
+            />
+            <div className="h-5/6 w-full absolute z-10 bottom-0 rounded-t-3xl bg-gray-100 overflow-y-scroll pb-20">
 
                 { sortedData.length === 0? 
                     <>
-                        <p className="home-message">
+                        <p className="home-message desktop:m-40">
                             <span>No recipes for today!</span>
                             <span className="home-message-inner">..please go to the calendar and <span>+</span> a recipe</span>
                             </p>

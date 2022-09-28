@@ -5,7 +5,7 @@ import Calender from "./Calender";
 import AddRecipeToCalender from "./AddRecipeToCalender";
 import axios from "../../api/axios";
 import MessageBox from "../Messege";
-
+import Header from "../Section-header";
 
 export default function FullCalender(){
 
@@ -87,11 +87,11 @@ export default function FullCalender(){
    
     return(
         <section className="home section-container">
-        <div className="header calender-header">
-            <h1 className="header-title">Calendar</h1>
-            {/* <img src={carrot} alt='' className="header-img"/> */}
-            <img src={ broccoli } alt='' className="calendar-img"/>
-        </div>
+
+        <Header
+                title = { `Calendar`}
+                image = { broccoli }
+            />
         <div className={!selectedDate ? "content grey" : 'content'}>
 
 
