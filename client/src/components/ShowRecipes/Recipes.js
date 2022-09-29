@@ -18,13 +18,13 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
     const [selectedRecipeIDForCalender, setSelectedRecipeIDForCalender] = useState('')
     const categoryData = new categoryDataImgs()
 // // please delete below code
-//     const [categoryData, setCategoryData] = useState(categoryDataImgs)
+    // const [categoryData, setCategoryData] = useState(categoryDataImgs)
     const [clickedCatergory, setClickedCatergory] = useState('')
 
 
     
     const dataDietary = new dietary()
-    // // please delete below code
+    // please delete below code
     // const [dataDietary, setDataDietary] = useState(dietary)
     const [clickedDiet, setClickedDiet] = useState('')
    
@@ -74,8 +74,6 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
     const categoriesRecipe = data.filter(obj => obj['category'] === clickedCatergory && obj)
 
     const dietariesRecipe = data.filter(obj => obj['dietary'] === clickedDiet && obj )
-
- 
 
 
     const recentRecipes = data.map(recipe => {
@@ -173,7 +171,7 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
             {
                 !updateRecipe && 
 
-                    <div className="h-full pl-10 pr-4 pt-8">
+                    <div className="h-full pl-10 pr-4 pt-8 mb-20">
                         
                             {!id && !showCategoryRecipe && !showDietRecipe && !updateRecipe &&
                                 <>
@@ -182,7 +180,7 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
                                         <div>
                                             <h4 className="text-sm">Recent</h4>
                                         </div>
-                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2">
+                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2 desktop:h-auto">
 
                                             {!loading ? recentRecipes : <Spinner
                                                 loading = { loading }/>}
@@ -193,7 +191,7 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
                                         <div >
                                             <h4 className="text-sm">Favourites</h4>
                                         </div>
-                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2">
+                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2 desktop:h-auto">
 
                                         {!loading ? recentRecipes : <Spinner
                                                 loading = { loading }/>}
@@ -204,7 +202,7 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
                                         <div >
                                             <h4 className="text-sm">Categories</h4>
                                         </div>
-                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2">
+                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2 desktop:h-auto">
 
                                         {categories}
                                         </div>
@@ -214,7 +212,7 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
                                         <div >
                                             <h4 className="text-sm">Dietaries</h4>
                                         </div>
-                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2">
+                                        <div className="flex w-full overflow-x-scroll gap-4 h-32 mt-2 desktop:h-auto">
                                         {dietaries}
                                         
                                         </div>

@@ -64,23 +64,23 @@ export default function Recipe({ data, id, setSelectedRecipeIDForCalender, setSe
     return(
         <>
             { !updateRecipe &&
-                <div className="recipe-card" >
-                <div className="recipe-card-header">
+                <div className="w-full flex flex-col items-center gap-2 desktop:w-3/4" >
+                <div className="text-center mt-4">
                     <h2>{ recipeObj.name }</h2>
-                    <img src={ recipeObj.image } alt="" className="individuañRecipe-img"/>
+                    <img src={ recipeObj.image } alt="" className="w-40 h-auto mt-4"/>
                 </div>
 
-                <div className="recipe-card--main">
+                <div className="flex flex-col items-center">
                     
-                    <div className="showIngredients">
-                        <h3>Ingredients</h3>
+                    <div className="flex flex-col items-center w-full ">
+                        <h3 className="mb-2">Ingredients</h3>
                         { ingredient }
                     </div>
                 
                     {/* <p >{ recipeObj.method }</p> */}
 
-                    <div className="method-container">
-                        <h3>Method</h3>
+                    <div className="flex flex-col items-center pt-8">
+                        <h3 className="mb-2">Method</h3>
                         {method}   
                     </div>
                     
@@ -96,7 +96,7 @@ export default function Recipe({ data, id, setSelectedRecipeIDForCalender, setSe
                         <button type="button" className="recipes-btns" onClick={ handleSelectedRecipeBtn }>calender</button>
                     </div>
                     }
-                {preview === undefined && <button type='button' onClick={ handleEditBtn }>Edit</button>}
+                {preview === undefined && <button type='button' className=' border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-orange-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-40 cursor-pointer hover:bg-orange-600 desktop:h-12 desktop:w-20' onClick={ handleEditBtn }>Edit</button>}
                 
 
             

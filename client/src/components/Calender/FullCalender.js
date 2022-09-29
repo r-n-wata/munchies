@@ -86,16 +86,16 @@ export default function FullCalender(){
     console.log(selectedRecipeName)
    
     return(
-        <section className="home section-container">
+        <section className="relative h-screen desktop:w-4/5 desktop:absolute desktop:right-0 overflow-y-hidden desktop:pb-8">
 
         <Header
                 title = { `Calendar`}
                 image = { broccoli }
             />
-        <div className={!selectedDate ? "content grey" : 'content'}>
+        <div className={!selectedDate ? "h-5/6 w-full absolute z-0 bottom-0 rounded-t-3xl bg-gray-100 overflow-y-scroll pb-20 desktop:flex desktop:w-full desktop:pb-8 grey overflow-y-hidden" : 'h-5/6 w-full absolute z-0 bottom-0 rounded-t-3xl bg-gray-100 overflow-y-scroll pb-20 desktop:flex desktop:w-full desktop:pb-8 desktop:border-2'}>
 
 
-            <div className={!selectedDate ? 'calenderContainer toFront calender' : 'toBack calenderContainer'}>
+            <div className={!selectedDate ? 'flex w-full h-full flex-col gap-4 pl-8 pr-8 mt-12 overflow-y-hidden' : 'hidden'}>
               <Calender 
                 setSelectedDate = { setSelectedDate }
                
@@ -106,7 +106,7 @@ export default function FullCalender(){
           
           
 
-            <div className={selectedDate ? "add-recipe-container toFront " : 'toBack add-recipe-container background'}>
+            <div className={selectedDate ? "flex relative bg-gray-100 h-full flex-col gap-4 mt-12 mb-32 desktop:w-full" : 'hidden'}>
 
                    <AddRecipeToCalender 
                     date = { selectedDate }
@@ -130,14 +130,21 @@ export default function FullCalender(){
                     
                     
                     />
-                    {
-                        showSaveBtn &&  <button type='submit' className={selectedDate ? "recipes-btns toFront " : ' recipes-btns  toBack'} id='save-event'  onClick={ handleSubmit }>Save Event</button>
+
+                    <div className="flex justify-around">
+
+                            {
+                        showSaveBtn &&
+                        
+                        <button type='submit'  className=' border-2 flex justify-center items-center w-40 h-10 rounded-xl bg-orange-600 text-gray-200 shadow mt-4 border-2 border-gray-300 w-1/4 pt-4 pb-4 pl-4 pr-4 font-sans tracking-wide hover:bg-orange-700  laptop:w-40 cursor-pointer hover:bg-blue-600  desktop:h-12 desktop:w-32 '  onClick={ handleSubmit }>Save</button>
                     }
                    
 
                     {
-                        selectedDate && showCalendarBtn && <button type="button" className="recipes-btns " id="back-to-calender-btn" onClick={ handleBackBtn }>calender</button>
+                        selectedDate && showCalendarBtn && <button type="button" className="border-2 flex justify-center items-center w-40 h-10 rounded-xl bg-orange-600 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide w-1/4 pt-4 pb-4 pl-4 pr-4  hover:bg-orange-700  laptop:w-40 cursor-pointer hover:bg-blue-600 desktop:h-12 desktop:w-32" onClick={ handleBackBtn }>calender</button>
                     }
+                    </div>
+                
 
                     { alert &&
 

@@ -23,14 +23,6 @@ export default function AddRecipeToCalender({ date, recipeID, setRecipeID, setSe
        
     }
 
-    // const handleCancelSave = () => {
-    //     setSelectRecipe(false)
-    //     setSelectedRecipeName('')
-    //     setSelectedRecipeImg('')
-        
-    // }
-    
-
     const idLen = recipeID.length > 0 
     // fetch the events
     useEffect(() =>{
@@ -104,10 +96,6 @@ export default function AddRecipeToCalender({ date, recipeID, setRecipeID, setSe
 
         const timesData = [...data]
           const times  = data.length !== 0 ? timesData.sort((a, b) => {
-
-            //  a = Number(a.timePlanned.replace(':', '').replace('  ', ''))
-            //  b = Number(b.timePlanned.replace(':', '').replace('  ', ''))
-            // return  a && b && a.timePlanned.localeCompare(b.timePlanned)
             return a.timePlanned - b.timePlanned
         
             })
@@ -142,14 +130,13 @@ export default function AddRecipeToCalender({ date, recipeID, setRecipeID, setSe
 
 
 
-            {date && !idLen && !showRecipe && !selectRecipe && <button type="button" className='add-recipe-event' onClick={ handleSelectRecipe }>{ !selectRecipe ? 'recipe': 'cancel'}</button>}
+            {date && !idLen && !showRecipe && !selectRecipe && <button type="button" className='border-2 flex justify-center items-center w-40 h-10 rounded-xl bg-gray-100 text-gray-600 shadow mt-4 border-2 border-gray-300 w-1/4 pt-4 pb-4 pl-4 pr-4 font-sans absolute right-8 tracking-wide laptop:w-40 cursor-pointer hover:bg-blue-600 desktop:h-16 hover:bg-gray-200 cursor-pointer  desktop:h-12 desktop:w-32' onClick={ handleSelectRecipe }>{ !selectRecipe ? 'recipes': 'cancel'}</button>}
 
     
                 {  !selectRecipe && !showRecipe && selectedDate &&
 
                     <div className="add-event-to-calender-container">
 
-                        {/* { selectedRecipeImg &&<button onClick={ handleCancelSave }>Cancel</button>} */}
                         <Time 
                             showTime={showTime} 
                             date={date}
