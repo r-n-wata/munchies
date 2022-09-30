@@ -12,11 +12,11 @@ export default function Preview({  data, setEdit, setPreview, preview, handleUpd
     
 
     return(
-        <section className="preview">
+        <section className="w-full flex flex-col items-center">
 
-             <div className="preview-btns">
-             <button type="button"  className="recipes-btns" onClick={  handleUpdateRecipe  }>save</button>   
-             <button type="button"  className="recipes-btns" onClick={ handleClick }>edit</button>
+             <div className="w-full flex justify-around mt-8 mb-0  ">
+                <button type="button"  className="border-2 flex justify-center items-center w-20 h-10 rounded-xl bg-red-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-40 cursor-pointer hover:bg-red-600 desktop:h-12 desktop:w-20" onClick={  handleUpdateRecipe  }>save</button>   
+                <button type="button"  className="border-2 flex justify-center items-center w-20 h-10 rounded-xl bg-orange-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-40 cursor-pointer hover:bg-orange-600 desktop:h-12 desktop:w-20" onClick={ handleClick }>edit</button>
             </div>
             <Recipe
                 data = { data }

@@ -64,25 +64,25 @@ export default function Recipe({ data, id, setSelectedRecipeIDForCalender, setSe
     return(
         <>
             { !updateRecipe &&
-                <div className="w-full flex flex-col items-center gap-2 desktop:w-3/4" >
-                <div className="text-center mt-4">
-                    <h2>{ recipeObj.name }</h2>
-                    <img src={ recipeObj.image } alt="" className="w-40 h-auto mt-4"/>
-                </div>
-
-                <div className="flex flex-col items-center">
-                    
-                    <div className="flex flex-col items-center w-full ">
-                        <h3 className="mb-2">Ingredients</h3>
-                        { ingredient }
+                <div className="w-full flex flex-col items-center justify-center desktop:w-1/2 pb-10 " >
+                    <div className="text-center mt-4 w-full flex flex-col items-center pt-10 desktop:bg-gray-200 rounded-t-3xl desktop:pb-4">
+                        <h2>{ recipeObj.name }</h2>
+                        <img src={ recipeObj.image } alt="" className="w-40 h-auto mt-4"/>
                     </div>
+
+                    <div className="flex flex-col items-center dekstop:bg-gray-300 desktop:w-full desktop:pt-4 desktop:pb-10">
+                        
+                        <div className="flex flex-col items-center w-full ">
+                            <h3 className="mb-2">Ingredients</h3>
+                            { ingredient }
+                        </div>
                 
                     {/* <p >{ recipeObj.method }</p> */}
 
-                    <div className="flex flex-col items-center pt-8">
-                        <h3 className="mb-2">Method</h3>
-                        {method}   
-                    </div>
+                        <div className="flex flex-col items-center pt-8">
+                            <h3 className="mb-2">Method</h3>
+                            {method}   
+                        </div>
                     
                 </div>
             

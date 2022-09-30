@@ -135,7 +135,7 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
                 color= { 'violet' }
             />
 
-            <div className="h-5/6 w-full absolute z-0 bottom-0 rounded-t-3xl bg-gray-100 overflow-y-scroll pb-20 desktop:flex desktop:w-full desktop:pb-8">
+            <div className="h-5/6 w-full absolute z-0 bottom-0 rounded-t-3xl bg-gray-100 overflow-y-scroll pb-20 desktop:flex desktop:w-full desktop:pb-10 ">
 
                 {!preview && <>
                 
@@ -173,7 +173,7 @@ export default function AddRecipeInfo({ updateRecipe, updateRecipeData }) {
 
                         />
                          </section>
-                        <h2 className='font-title w-1/2 text-gray-700 text-xl mt-8 desktop:text-2xl w-full'>Add Recipe Info</h2>
+                        <h2 className='font-title text-gray-700 text-xl mt-8 desktop:text-2xl w-full'>Add Recipe Info</h2>
 
                         <form  className='relative flex flex-col items-start hap-1 w-full h-1/2 mt-4'>
 

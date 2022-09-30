@@ -75,16 +75,17 @@ export default function AddIngredients({ setIngredients, setIngredientCount, ing
 
                     {edit && 
                     <>
-                         <form onSubmit={ updateIngredients } className='form-container addrecipe add-method'>
+                         <form onSubmit={ updateIngredients } >
                         
                         <label className='flex flex-col'>
     
                             <textarea 
                                 onChange={(e) => setIngredient(e.target.value)}
+                                className= 'h-32 w-50 border-2 border-gray-300 rounded mt-1'
                                 defaultValue={ updateRecipeIngredients ? updateRecipeIngredients : ingredients.join('\n') } />
                         </label>
     
-                        <input type='submit' value='update' className='addrecipe-btn' id='method--btn' />
+                        <input type='submit' value='update' className=' border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-blue-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-40 cursor-pointer hover:bg-blue-600'  />
     
                     </form>
 
