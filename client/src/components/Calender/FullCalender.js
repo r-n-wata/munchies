@@ -1,6 +1,5 @@
 import { React, useState} from "react";
 import Navigate from "../Navigation/Navigation";
-import '../../css/FullCalender.css'
 import Calender from "./Calender";
 import AddRecipeToCalender from "./AddRecipeToCalender";
 import axios from "../../api/axios";

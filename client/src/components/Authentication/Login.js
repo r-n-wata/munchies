@@ -2,7 +2,6 @@ import { useState } from 'react'
 import axios from 'axios'
 import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
-import '../../css/Login.css'
 import {  Link } from 'react-router-dom';
 
 
@@ -40,7 +39,7 @@ export default function Login() {
     })
     .catch(err => {
         if(err.response.status === 400){
-            setErrMessage('login failed!')
+            setErrMessage('Login failed!')
         }else{
             console.log(err)
         }
@@ -57,39 +56,41 @@ export default function Login() {
 
     return (
      
-            <section className='initial-page-container'>
-                   <h1 className="start-title">munchies</h1>
+            <section className='w-full h-screen flex flex-col justify-start items-center pt-40'>
+                   <h1 className="font-title leading-10 mt-4 text-5xl text-red-600">munchies</h1>
 
-                    <form onSubmit={loginUser} className='form-container'>
+                    <form onSubmit={loginUser} className='flex flex-col  items-center width-full h-4/6 gap-0 mt-8'>
 
-                    <input
-                    value={email} 
-                    onChange={(e) => setEmail(e.target.value)}
-                    type='email' 
-                    placeholder='Email'
-                    className='login-register-form-controls'
-                    />
-                    <br/>
+                        <input
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)}
+                        type='email' 
+                        placeholder='Email'
+                        className='h-12 border-2 border-gray-300 rounded-xl mt-1s pt-4 pb-4 pl-2 pr-2'
+                        />
+                        <br/>
 
-                    <input 
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    type='password' 
-                    placeholder='Password'
-                    className='login-register-form-controls'
-                    />
-                    <br/>
+                        <input 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        type='password' 
+                        placeholder='Password'
+                        className='h-12 border-2 border-gray-300 rounded-xl mt-1s pt-4 pb-4 pl-2 pr-2'
+                        />
+                        <br/>
 
-                    <input type='submit' value='Login' className='border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-red-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-60 cursor-pointer hover:bg-red-600'/>
+                        <input type='submit' value='Login' className='border-2 flex justify-center items-center w-full h-10 rounded-xl bg-red-500 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide laptop:w-60 cursor-pointer hover:bg-red-600'/>
 
                 </form>
 
-
+                {errMesage && <span>{ errMesage }</span>}
                 {/* <a href='' className='login-registerbtn btn'>Register</a> */}
 
-                <Link to='/login' className='border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-white text-gray-700 shadow mt-4 border-2 border-red-300 font-sans tracking-wide laptop:w-60 cursor-pointer hover:bg-gray-100'>
+                <Link to='/register' className='border-2 flex justify-center items-center w-3/5 h-10 rounded-xl bg-white text-gray-700 shadow mt-4 border-2 border-red-300 font-sans tracking-wide laptop:w-60 cursor-pointer hover:bg-gray-100'>
                     Signup
                         </Link>
+
+                
             
            
                
