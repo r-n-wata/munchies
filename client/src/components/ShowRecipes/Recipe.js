@@ -4,9 +4,7 @@ import '../../css/Recipe.css'
 
 export default function Recipe({ data, id, setSelectedRecipeIDForCalender, setSelectRecipe, setSelectedRecipeName, selectRecipe, setShowSaveBtn, setShowCalendarBtn, selectedRecipeName, setSelectedRecipeImg, updateRecipe, setUpdateRecipe, updateRecipeImage, preview, setRecipeID  }){
    console.log(data.image)
- 
     let recipeObj = data[0]
-   
     const ingredientsArr = recipeObj.ingredients
     const ingredient = ingredientsArr.map(el =>{
         let result = []
@@ -52,7 +50,7 @@ export default function Recipe({ data, id, setSelectedRecipeIDForCalender, setSe
 
 
     const method = recipeObj.method.map(el => (
-        <p className="recipe-card-method">{ el}</p>
+        <p className="self-start pl-8 pr-8">{ el}</p>
     ))
 
     console.log(selectedRecipeName)

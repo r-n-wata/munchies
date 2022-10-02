@@ -38,10 +38,10 @@ export default function RecipeCard({ image, name, id, setUserId, setCategory, se
         <>
         {
 
-            !data  ? <div className="w-full" onClick={ handleClick }>
+            !data  ? <div className="w-full cursor-pointer" onClick={ handleClick }>
                 <div className="w-20 h-20 rounded desktop:w-32 desktop:h-32">
 
-                   <img src={image} alt="" className="w-20 h-full object-cover desktop:w-32"/> 
+                   <img src={image} alt="" className="rounded-xl w-20 h-full object-cover desktop:w-32"/> 
                 </div>
                 
                 <h2 className="text-xs">{name}</h2>

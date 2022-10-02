@@ -69,9 +69,8 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
             }, [])
 
 
-    
 
-    const categoriesRecipe = data.filter(obj => obj['category'] === clickedCatergory && obj)
+    const categoriesRecipe =  data.filter(obj => obj['category'] === clickedCatergory && obj)
 
     const dietariesRecipe = data.filter(obj => obj['dietary'] === clickedDiet && obj )
 
@@ -171,7 +170,7 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
             {
                 !updateRecipe && 
 
-                    <div className="h-full pl-10 pr-4 pt-8 mb-20">
+                    <div className="w-full h-full pl-10 pr-4 pt-8 mb-20">
                         
                             {!id && !showCategoryRecipe && !showDietRecipe && !updateRecipe &&
                                 <>
@@ -223,44 +222,49 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
                             }
                             { id && 
                                 <button type='button' 
-                                    id='recipes-back-btn' 
-                                    // id='addrecipe-back' 
-                                    className="recipes-btns"
+                                    className="bg-white width-20 h-8 rounded border-2 transition ease-in delay-150 pl-4 pr-4 h-12 hover:bg-orange-200"
                                     onClick={handleBackBtn}
                                 >back</button>}
 
 
 
-                            {id && <Recipe 
-                                data = { recipe }
-                                id= { id }
-                                setSelectedRecipeIDForCalender = { setSelectedRecipeIDForCalender }
-                                setSelectRecipe = { setSelectRecipe }
-                                selectRecipe ={ selectRecipe }
-                                setSelectedRecipeName = { setSelectedRecipeName }
-                                setShowSaveBtn = { setShowSaveBtn }
-                                setShowCalendarBtn = { setShowCalendarBtn }
-                                setSelectedRecipeImg = { setSelectedRecipeImg }
-                                selectedRecipeName = { selectedRecipeName }
-                                updateRecipe= { updateRecipe }
-                                setUpdateRecipe= { setUpdateRecipe }
-                                setRecipeID = { setRecipeID }
+                            {id &&
+                            
+                                <div className="w-full flex justify-center">
+                                    <Recipe 
+                                        data = { recipe }
+                                        id= { id }
+                                        setSelectedRecipeIDForCalender = { setSelectedRecipeIDForCalender }
+                                        setSelectRecipe = { setSelectRecipe }
+                                        selectRecipe ={ selectRecipe }
+                                        setSelectedRecipeName = { setSelectedRecipeName }
+                                        setShowSaveBtn = { setShowSaveBtn }
+                                        setShowCalendarBtn = { setShowCalendarBtn }
+                                        setSelectedRecipeImg = { setSelectedRecipeImg }
+                                        selectedRecipeName = { selectedRecipeName }
+                                        updateRecipe= { updateRecipe }
+                                        setUpdateRecipe= { setUpdateRecipe }
+                                        setRecipeID = { setRecipeID }
 
-                                />}
+                                        />
+                                </div>}
                 
                         
                                 {
-                                    !id &&  setShowCategoryRecipe && 
+                                    // !id &&  setShowCategoryRecipe && 
+                                    clickedCatergory &&
                                     
-                                    <div className="all-categories-recipes">
+                                    <div className="flex flex-col wrap gap-2 w-full overflow-auto ">
                                     { showCategoriesRecipes }   
                                     </div>
                                 }
 
-                                {
-                                    !id && setShowDietRecipe  && 
+                                
 
-                                    <div className="all-diet-recipes">
+                                {
+                                    // !id && setShowDietRecipe  && 
+                                    clickedDiet &&
+                                    <div className="flex flex-col wrap gap-2 w-full overflow-auto ">
                                     { showDietariesRecipes }   
                                     </div>
                                     
@@ -270,6 +274,8 @@ export default function Recipes({ setRecipeID, setSelectedRecipeName, setSelectR
                 
 
                 </div>
+
+
 
             }
             

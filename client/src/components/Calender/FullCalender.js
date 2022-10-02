@@ -140,7 +140,7 @@ export default function FullCalender(){
                    
 
                     {
-                        selectedDate && showCalendarBtn && <button type="button" className="border-2 flex justify-center items-center w-40 h-10 rounded-xl bg-orange-600 text-gray-200 shadow mt-4 border-2 border-gray-300 font-sans tracking-wide w-1/4 pt-4 pb-4 pl-4 pr-4  hover:bg-orange-700  laptop:w-40 cursor-pointer hover:bg-blue-600 desktop:h-12 desktop:w-32" onClick={ handleBackBtn }>calender</button>
+                        selectedDate && showCalendarBtn && <button type="button" className="border-2 flex justify-center items-center w-40 h-10 rounded-xl bg-gray-100 text-gray-700 shadow mt-4 border-2 border-gray-400 font-sans tracking-wide w-1/4 pt-4 pb-4 pl-4 pr-4    laptop:w-40 cursor-pointer hover:bg-gray-300 desktop:h-12 desktop:w-32" onClick={ handleBackBtn }>calender</button>
                     }
                     </div>
                 

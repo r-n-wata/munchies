@@ -130,12 +130,12 @@ export default function AddRecipeToCalender({ date, recipeID, setRecipeID, setSe
 
 
 
-            {date && !idLen && !showRecipe && !selectRecipe && <button type="button" className='border-2 flex justify-center items-center w-40 h-10 rounded-xl bg-gray-100 text-gray-600 shadow mt-4 border-2 border-gray-300 w-1/4 pt-4 pb-4 pl-4 pr-4 font-sans absolute right-8 tracking-wide laptop:w-40 cursor-pointer hover:bg-blue-600 desktop:h-16 hover:bg-gray-200 cursor-pointer  desktop:h-12 desktop:w-32' onClick={ handleSelectRecipe }>{ !selectRecipe ? 'recipes': 'cancel'}</button>}
+            {date && !idLen && !showRecipe && !selectRecipe && <button type="button" className='border-2 flex justify-center items-center w-40 h-10 rounded-xl bg-orange-500 shadow mt-4 border-2 border-gray-300 w-1/4 pt-4 pb-4 pl-4 pr-4 font-sans absolute right-8 tracking-wide text-gray-100 laptop:w-40 cursor-pointer  desktop:h-16 hover:bg-orange-600 cursor-pointer  desktop:h-12 desktop:w-32' onClick={ handleSelectRecipe }>{ !selectRecipe ? 'recipes': 'cancel'}</button>}
 
     
                 {  !selectRecipe && !showRecipe && selectedDate &&
 
-                    <div className="add-event-to-calender-container">
+                    <div className="flex flex-col justify-center items-center mt-20 gap-8">
 
                         <Time 
                             showTime={showTime} 
